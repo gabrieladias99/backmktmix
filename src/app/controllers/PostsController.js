@@ -64,8 +64,7 @@ class PostsController {
       })
        
       const hashtagsArray = [].concat.apply([], hashtags).filter((el)=>el != null);
-      const uniq = [...new Set(hashtagsArray)];
-      console.log(uniq)
+      const uniqHashtags = [...new Set(hashtagsArray)];
 
 
       const mediaCommentsVideo = Math.floor(totalCommentsVideo/totalVideos);
@@ -78,7 +77,8 @@ class PostsController {
         mediaCommentsVideo : mediaCommentsVideo,
         mediaLikesVideo : mediaLikesVideo,
         mediaLikesImage : mediaLikesImage,
-        threeBestPosts : threeBestPosts
+        threeBestPosts : threeBestPosts,
+        hashtags: uniqHashtags
       }
 
       return data;
